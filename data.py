@@ -40,7 +40,7 @@ def get_standings(url=STANDINGS_URL):
     df = pd.DataFrame(data[1:], columns=data[0])
     df = df.astype(DTYPES_STANDINGS)
     df["GAA"] = (df["GA"] / df["GP"]).round(2)
-    return df
+    return df.set_index("Team")
 
 
 @st.cache_data()
