@@ -33,7 +33,7 @@ if highlighted_teams != []:
 
 
 st.subheader("Standings")
-st.dataframe(standings)
+st.dataframe(standings.set_index("Team"))
 
 st.subheader("Games")
-st.write(games)
+st.write(games.set_index("date"))
